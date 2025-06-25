@@ -30,10 +30,3 @@ Or run individually:
 - Backend: `cd infraops-backend && dotnet run`
 - Frontend: `cd infraops-frontend && npm run dev`
 
-## Next Steps
-- Connect backend to PostgreSQL
-- Build dashboard and portfolio UI
-- Add CI/CD and AWS deployment
-
----
-This project is designed to showcase relevant skills for GIC internship roles in software engineering and technology infrastructure.
