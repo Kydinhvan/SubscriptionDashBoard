@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: gicuser
+      POSTGRES_PASSWORD: gicpassword
+      POSTGRES_DB: gicdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./infraops-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Database=gicdb;Username=gicuser;Password=gicpassword
+    ports:
+      - '5000:8080'
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./infraops-frontend
+    command: npm run dev -- --host
+    ports:
+      - '5173:5173'
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

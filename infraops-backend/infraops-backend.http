@@ -1,0 +1,6 @@
+@infraops_backend_HostAddress = http://localhost:5229
+
+GET {{infraops_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

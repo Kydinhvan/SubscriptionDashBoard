@@ -1,0 +1,83 @@
+/* Bright theme and adaptive styles */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: #213547;
+  background-color: #f7faff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #3b5cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #1a237e;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7faff 0%, #e3eafc 100%);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid #b3c6ff;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #e3eafc;
+  color: #213547;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s;
+}
+button:hover {
+  border-color: #3b5cff;
+  background: #d0e1ff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto #3b5cff;
+}
+
+/* Responsive container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  #root {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+}
